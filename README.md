@@ -13,4 +13,4 @@ This function can be used to calculate confidence intervals in designs that cont
   
 The example data set contains two between subject variables and two within subject variables. The number of variables specified in the function MUST correspond to the number that is present in the dataframe. Accordingly, if you have a design with three IVs, but you're interested in a two-way interaction between two of the variable, the data needs to be collapsed over the third variable to render correct results. `within_ci()` should recognize if within-factors are not declared and throw an error.  
 
-The dependencies are not loaded automatically in the package but need to be loaded separately as exemplified in examples.R. These are `tidyr`, `dplyr`, and `rlang`. 
+The dependencies are not loaded automatically in the function but need to be loaded separately as exemplified in examples.R. These are `dplyr`, and `rlang`. 
