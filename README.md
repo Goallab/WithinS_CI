@@ -7,7 +7,7 @@ Created by [Myrthel Dogge](mailto:m.dogge@uu.nl) and [Chris Harris](mailto:c.a.h
 INSTRUCTIONS:  
 This function can be used to calculate confidence intervals in designs that contain at least one within factor. It is a generalized form based off of code in the [Cookbook For R](http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)/) condensed in one flexible function. The repository contains three files:  
 
-1. WithinS_CI.R contains the actual function.
+1. within_ci.R contains the actual function.
 2. examples.R contains some example uses of the function including example plots.
 3. createdata.R generates example data.
   
