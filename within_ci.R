@@ -1,4 +1,4 @@
-WithinS_CI <- function(.data,
+within_ci <- function(.data,
                         .subject,
                         .value,
                         .conf = .95,
@@ -14,11 +14,11 @@ WithinS_CI <- function(.data,
   
   ### Preparations----
   # Quote all column names handed into function
-  .subject <- enquo(.subject)
-  .value <- enquo(.value)
-  .ws_factors <- enexprs(.ws_factors)
-  .bs_factors <- enexprs(.bs_factors)
-  .all_grouping <- vars(!!!.bs_factors, !!!.ws_factors) # All within and between factors
+  .subject <- rlang::enquo(.subject)
+  .value <- rlang::enquo(.value)
+  .ws_factors <- rlang::enexprs(.ws_factors)
+  .bs_factors <- rlang::enexprs(.bs_factors)
+  .all_grouping <- dplyr::vars(!!!.bs_factors, !!!.ws_factors) # All within and between factors
   
   # Determine total number of levels for all within subject variables
   .nwithin_levels <- .data %>%

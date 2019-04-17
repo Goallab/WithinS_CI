@@ -1,15 +1,15 @@
 ### Dependencies----
-# For WithinS_CI.R
-if (!require(tidyr)) {install.packages(tidyr); library(tidyr)}
+# For within_ci.R
 if (!require(dplyr)) {install.packages(dplyr); library(dplyr)}
 if (!require(rlang)) {install.packages(rlang); library(rlang)}
 # For examples.R
 if (!require(ggplot2)) {install.packages(ggplot2); library(ggplot2)}
 # For createdata.R
 if (!require(mvtnorm)) {install.packages(mvtnorm); library(mvtnorm)}
+if (!require(tidyr)) {install.packages(tidyr); library(tidyr)}
 
 ### Function----
-source("WithinS_CI.R")
+source("within_ci.R")
 source("createdata.R")
 
 ### Examples----
@@ -24,7 +24,7 @@ source("createdata.R")
 
 # One within factor, no between factors
 df <- data_1w
-summary_data <- WithinS_CI(.data = df,
+summary_data <- within_ci(.data = df,
            .subject = subject,
            .value = DV,
            .ws_factors = within1)
@@ -43,7 +43,7 @@ ggplot(data = summary_data,
 
 # One within factor, one between factor
 df <- data_1w1b
-WithinS_CI(.data = df,
+within_ci(.data = df,
            .subject = subject,
            .value = DV,
            .ws_factors = within1,
@@ -66,7 +66,7 @@ WithinS_CI(.data = df,
 
 # Multiple within and between factors
 data_2w2b %>%
-  WithinS_CI(.data = .,
+  within_ci(.data = .,
            .subject = subject,
            .value = DV,
            .ws_factors = c(within1, within2),
